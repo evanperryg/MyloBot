@@ -34,9 +34,8 @@ class TrackScheduler extends AudioEventAdapter {
 	}
 
 	void queueNext(AudioTrack track) {
-
-		if (!player.startTrack(track, true)) {
-			logger.info("Adding to queue");
+		if(!player.startTrack(track, true)) {
+			logger.info("Adding to front of queue");
 			queue.offerFirst(track);
 		}
 	}
